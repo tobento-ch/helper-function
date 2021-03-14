@@ -27,7 +27,7 @@
     },    
     "autoload": {
         "psr-4": {
-            "Tobento\\Service\\HelperFunction\\": ""
+            "Tobento\\Service\\HelperFunction\\": "src"
         }
     },
     "autoload-dev": {
