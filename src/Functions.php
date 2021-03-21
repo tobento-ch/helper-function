@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Tobento\Service\HelperFunction;
 
-use Exception;
+use RuntimeException;
 
 /**
  * Functions manager.
@@ -61,7 +61,7 @@ class Functions
     {
         if (!isset(static::$data[$key]))
         {
-             throw new Exception('Helper function data "'.$key.'" does not exist! You need to set the data first.');
+             throw new RuntimeException('Helper function data "'.$key.'" does not exist! You need to set the data first.');
         }
         
         return static::$data[$key];
@@ -77,7 +77,7 @@ class Functions
     {        
         if (!file_exists($functionFile))
         {
-            throw new Exception('Helper function file "'.$functionFile.'" does not exist!');
+            throw new RuntimeException('Helper function file "'.$functionFile.'" does not exist!');
         }
                 
         require_once $functionFile;
