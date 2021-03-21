@@ -1,6 +1,6 @@
 # HelperFunction Service
 
-With the HelperFunction Service you can easliy manage your helper functions.
+With the HelperFunction Service you can easily manage your helper functions.
 
 ## Table of Contents
 
