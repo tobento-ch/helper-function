@@ -1,5 +1,5 @@
 {
-    "name": "tobento/helper-function",
+    "name": "tobento/service-helper-function",
     "type": "library",
     "description": "Support for helper functions management.",
     "keywords": [
