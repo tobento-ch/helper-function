@@ -16,7 +16,7 @@ ___
 Add the latest version of the HelperFunction service running this command.
 
 ```
-composer require tobento/helper-function
+composer require tobento/service-helper-function
 ```
 
 ## Requirements
