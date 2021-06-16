@@ -3,7 +3,7 @@
 /**
  * TOBENTO
  *
- * @copyright    Tobias Strub, TOBENTO
+ * @copyright   Tobias Strub, TOBENTO
  * @license     MIT License, see LICENSE file distributed with this source code.
  * @author      Tobias Strub
  * @link        https://www.tobento.ch
@@ -37,8 +37,8 @@ class Functions
     /**
      * Sets data.
      *
-     * @param  string The key.
-     * @param  mixed the data.
+     * @param string $key The key.
+     * @param mixed $data The data.
      * @return void
      */
     public function set(string $key, mixed $data): void
@@ -54,7 +54,7 @@ class Functions
     /**
      * Gets data.
      *
-     * @param string The key.
+     * @param string $key The key.
      * @return mixed The data.
      */
     public static function get(string $key): mixed
@@ -70,7 +70,7 @@ class Functions
     /**
      * Registers a function.
      *
-     * @param string A function name.
+     * @param string $functionFile A function name.
      * @return void
      */    
     public function register(string $functionFile): void
