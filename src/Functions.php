@@ -101,5 +101,5 @@ class Functions
     public function getKeys(): array
     {
         return $this->dataKeys;
-    }    
+    }
 }
