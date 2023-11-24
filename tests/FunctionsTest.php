@@ -73,5 +73,28 @@ class FunctionsTest extends TestCase
         $functions->set('foo', 'bar');
 
         $this->assertSame(['sitename', 'foo'], $functions->getKeys());
+	}
+
+    public function testGetMethod()
+    {
+        $functions = new Functions();
+        $functions->set('foo', 'Foo');
+        $this->assertSame('Foo', Functions::get('foo'));
+	}
+    
+    public function testGetMethodThrowsRuntimeExceptionIfNotFound()
+    {
+        $this->expectException(\RuntimeException::class);
+        $functions = new Functions();
+        Functions::get('bar');
 	}    
+    
+    public function testHasMethod()
+    {
+        $functions = new Functions();
+        $functions->set('foo', 'Foo');
+
+        $this->assertTrue(Functions::has('foo'));
+        $this->assertFalse(Functions::has('bar'));
+	}
 }
