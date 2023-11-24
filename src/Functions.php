@@ -45,8 +45,7 @@ class Functions
     {
         static::$data[$key] = $data;
         
-        if (!in_array($key, $this->dataKeys))
-        {
+        if (!in_array($key, $this->dataKeys)) {
             $this->dataKeys[] = $key;
         }
     }
@@ -59,14 +58,26 @@ class Functions
      */
     public static function get(string $key): mixed
     {
-        if (!isset(static::$data[$key]))
-        {
-             throw new RuntimeException('Helper function data "'.$key.'" does not exist! You need to set the data first.');
+        if (!static::has($key)) {
+             throw new RuntimeException(
+                 sprintf('Helper function data "%s" does not exist! You need to set the data first.', $key)
+             );
         }
         
         return static::$data[$key];
     }
-                
+    
+    /**
+     * Returns true if has data, otherwise false.
+     *
+     * @param string $key The key.
+     * @return mixed The data.
+     */
+    public static function has(string $key): bool
+    {
+        return isset(static::$data[$key]);
+    }
+    
     /**
      * Registers a function.
      *
@@ -74,12 +85,11 @@ class Functions
      * @return void
      */    
     public function register(string $functionFile): void
-    {        
-        if (!file_exists($functionFile))
-        {
-            throw new RuntimeException('Helper function file "'.$functionFile.'" does not exist!');
+    {
+        if (!file_exists($functionFile)) {
+            throw new RuntimeException(sprintf('Helper function file "%s" does not exist!', $functionFile));
         }
-                
+        
         require_once $functionFile;
     }
 
